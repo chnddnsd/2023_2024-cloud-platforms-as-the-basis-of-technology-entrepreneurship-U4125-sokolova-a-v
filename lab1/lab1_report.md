@@ -6,7 +6,7 @@ Group: U4125
 Author: Sokolova Aleksandra Vladimirovna  
 Lab: Lab1  
 Date of create: 21.04.2025  
-Date of finished: __.04.2025  
+Date of finished: 28.04.2025  
 ___
 После создания Service Account и виртуальной машины по инструкции к лабораторной работе переходим к выполнению задания по копированию файлов на нашу ВМ.  
 1. Создаем папку с помощью команды mkdir
