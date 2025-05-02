@@ -5,8 +5,8 @@ Year: 2024/2025
 Group: U4125  
 Author: Sokolova Aleksandra Vladimirovna  
 Lab: Lab2  
-Date of create: 21.04.2025  
-Date of finished: 28.04.2025  
+Date of create: 02.05.2025  
+Date of finished: __.05.2025  
 ___  
 1. Заходим в Cloud Run и создаем дефолтный сервис Hello с портом 8080  
 <img width="1280" alt="Снимок экрана 2025-05-02 в 10 23 47" src="https://github.com/user-attachments/assets/b2370e74-44c9-429b-a46e-a95fe4efca21" />
