@@ -6,7 +6,7 @@ Group: U4125
 Author: Sokolova Aleksandra Vladimirovna  
 Lab: Lab3  
 Date of create: 02.05.2025  
-Date of finished: __.05.2025  
+Date of finished: 02.05.2025  
 ___  
 1. Создадим Cloud Storage bucket
 <img width="1274" alt="Снимок экрана 2025-05-02 в 11 41 53" src="https://github.com/user-attachments/assets/1d03922c-466b-41fe-8ebc-ffcf790c2c80" />
