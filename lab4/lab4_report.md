@@ -9,14 +9,35 @@ Date of create: 04.05.2025
 Date of finished: __.05.2025  
 ___  
 ### Начальное состояние  
-Frontend: Хостинг на Firebase Hosting 
-Backend: Cloud Functions 
-AI: Vertex AI  
+Frontend: Firebase Hosting 
+Backend: Cloud Run 
+AI: Vertex AI (Image Models)  
 База данных: Cloud SQL  
 Хранение: Cloud Storage  
-![начало drawio](https://github.com/user-attachments/assets/1c432b7a-0a56-4a13-b000-be2fc6c61ca2)
-На данном этапе приложение у приложения serverless-архитектура, что позволяет сделать с упор на минимальные затраты. Веб хостится через Firebase. Cloud Functions обрабатывает запросы юзеров.  
-Загружаемые файлы хранятся в Cloud Storage, а для хранения и обработки структурированных данных используется Cloud SQL.   
+![начальное drawio](https://github.com/user-attachments/assets/a43c4f30-e610-45ca-b98f-5eae39b1e3e2)
+На данном этапе приложение у приложения serverless-архитектура, что позволяет сделать с упор на минимальные затраты. Веб на Firebase. Cloud Run обрабатывает запросы юзеров, обращается к ИИ-модели. Создаваемые файлы хранятся в Cloud Storage, а для хранения и обработки структурированных данных используется Cloud SQL.   
 Для мониторинга на данном этапе ничего не используем.   
+Позволяет обеспечить минимальные затраты на старте, возможность автомасштабирования Cloud Run, Vertex AI с оплатой только за количество генераций в день.  
+
 **Расчет стоимости**  
-<img width="418" alt="Снимок экрана 2025-05-04 в 20 28 21" src="https://github.com/user-attachments/assets/7f19f554-59be-42ec-b497-3880299207d5" />
+1. Firebase **0$** в месяц при минимальных параметрах
+2. Cloud Run **2.88$** в месяц (40 часов)
+3. Vertex AI (Image Models) **≈6.08$** в месяц (10 запросов в день)  
+4. Cloud SQL (MySQL) **16.80$** в месяц (db-g1-small, 10 GiB)
+5. Cloud Storage **0.26$** (10 GiB)  
+**Итого: 26.02$**  
+___  
+### Тестирование партнерами  
+В существующую архитектуру добавим балансировщик, а также Cloud Monitoring. Увеличим показатели других компонентов.  
+![тест drawio](https://github.com/user-attachments/assets/5acbd3cd-3bd4-4348-bbbc-a215a203ddad)  
+
+**Расчет стоимости**  
+1. Cloud Run **13.68$** в месяц (100 часов)
+2. Vertex AI (Image Models) **60.83$** в месяц (100 запросов в день)  
+3. Cloud SQL (MySQL) **23.50$** в месяц (db-g1-small, 50 GiB)
+4. Cloud Storage **1.30$** (50 GiB)
+5. Cloud Load Balancing
+6. Cloud Monitoring **38.70$**  
+**Итого: 136.34$**
+___  
+### Продовое решение  
