@@ -29,7 +29,7 @@ AI: Vertex AI (Image Models)
 ___  
 ### Тестирование партнерами  
 В существующую архитектуру добавим балансировщик, а также Cloud Monitoring. Увеличим показатели других компонентов.  
-![тест drawio](https://github.com/user-attachments/assets/5acbd3cd-3bd4-4348-bbbc-a215a203ddad)  
+![тест drawio (1)](https://github.com/user-attachments/assets/06648d25-cabd-453c-a4d6-479a015ca3a3)  
 
 **Расчет стоимости**  
 1. Cloud Run **13.68$** в месяц (100 часов)
@@ -41,3 +41,13 @@ ___
 **Итого: 136.34$**
 ___  
 ### Продовое решение  
+Если у нас будет, например, до 5000 ежедневных запросов, то архитектура с Cloud Run останется оптимальной c некоторыми корректировками.  
+
+**Расчет стоимости**  
+1. Cloud Run **13.68$** в месяц (100 часов)
+2. Vertex AI (Image Models) **60.83$** в месяц (100 запросов в день)  
+3. Cloud SQL (MySQL) **23.50$** в месяц (db-g1-small, 50 GiB)
+4. Cloud Storage **1.30$** (50 GiB)
+5. Cloud Load Balancing
+6. Cloud Monitoring **38.70$**  
+**Итого: 136.34$**
